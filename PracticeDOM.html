@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Form Registration</title>
+    <link rel="stylesheet" href="./PracticeDOM.css">
+    <script defer src="./PracticeDOM.js"></script>
+    <script defer src="https://unpkg.com/imask"></script>
+    <script defer src="https://kit.fontawesome.com/5ecf1478ab.js" crossorigin="anonymous"></script>
+
+<body>
+    <div class="wrapper-form-reistration">
+        <h2 id="title-registration">Registration <br>form</h2>
+
+        <form class="form-reistration" autocorrect="off">
+            <label for="firstName">
+                <p>First Name</p><input class="input_form_registration" id="firstName" type="text">
+            </label>
+            <div class="correct_input">✓</div>
+            <div class="block_prompt">
+                <div class="prompt">?</div>
+                <div class="prompt_text">Name can contain letters of the Latin alphabet (a - z), numbers (0-9) and
+                    periods (.)</div>
+            </div>
+            <div class="error_validation" id="errorFirstName"></div>
+
+
+
+            <label for="secondName">
+                <p>Second Name</p><input class="input_form_registration" id="secondName" type="text">
+            </label>
+            <div class="correct_input">✓</div>
+            <div class="block_prompt">
+                <div class="prompt">?</div>
+                <div class="prompt_text">Second name can contain letters of the Latin alphabet (a - z), numbers (0-9)
+                    and periods (.)</div>
+            </div>
+            <div class="error_validation" class="input_form_registration" id="errorSecondName"></div>
+
+
+
+            <label for="number">
+                <p>Number</p><input class="input_form_registration" id="number" type="tel"
+                    placeholder="+(380) (00) 000-00-00">
+            </label>
+            <div class="correct_input">✓</div>
+            <div class="block_prompt">
+                <div class="prompt">?</div>
+                <div class="prompt_text">The number must be of the specified format with the code of Ukraine (+380)
+                </div>
+            </div>
+            <div class="error_validation" id="errorNumber"></div>
+
+
+
+
+            <label for="email">
+                <p>Email</p><input class="input_form_registration" id="email" type="text">
+            </label>
+            <div class="correct_input">✓</div>
+            <div class="block_prompt">
+                <div class="prompt">?</div>
+                <div class="prompt_text">The email address must match the email format: user@email.com </div>
+            </div>
+            <div class="error_validation" id="errorEmail"></div>
+
+
+
+            <label for="password">
+                <p>Password</p>
+            </label>
+            <div class="password"><span id="show_password" class="fas fa-eye"></span><input
+                    class="input_form_registration" id="password" type="password"></div>
+
+
+            <div class="correct_input">✓</div>
+            <div class="block_prompt">
+                <div class="prompt">?</div>
+                <div class="prompt_text">
+                    The password must: <br>
+                    · Contain at least 6 characters<br>
+                    · Contain at least 1 uppercase alphabetic character<br>
+                    · Contain at least 1 numeric character</div>
+            </div>
+            <div class="error_validation" id="errorPassword"></div>
+
+            <button type="reset" id="reset">clear the form </button>
+            <button type="submit" id="send_data">submit</button>
+
+
+
+        </form>
+
+
+    </div>
+
+    <div id="modal-background-form-reistration"></div>
+    <div id="modal-message_form-reistration">
+        <h3>Registration completed successfully!</h3>
+        <button id="modal-button-for-close-message">OK</button>
+    </div>
+</body>
+
+</html>

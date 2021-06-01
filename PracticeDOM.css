@@ -1,0 +1,188 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgba(243, 190, 190, 0.589);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./Background.jpg);
+  background-position: -530px;
+  background-attachment: fixed;
+  animation: backgroundMove 50s linear infinite alternate; }
+
+@keyframes backgroundMove {
+  0% {
+    background-position: -430px; }
+  100% {
+    background-position: -630px; } }
+.wrapper-form-reistration {
+  width: 360px;
+  background-color: #c2b6ce;
+  border: 7px outset #b78ee0;
+  border-radius: 6px;
+  box-shadow: 3px 5px 7px #1f1e1e; }
+  .wrapper-form-reistration #title-registration {
+    font-size: 33px;
+    margin: 15px 0;
+    text-align: center;
+    text-transform: uppercase; }
+  .wrapper-form-reistration form {
+    text-align: center;
+    margin: 30px 0 20px 0; }
+    .wrapper-form-reistration form p {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      margin: 14px 0 5px 0; }
+    .wrapper-form-reistration form input {
+      width: 250px;
+      height: 22px;
+      border: 2px solid rebeccapurple;
+      border-radius: 5px;
+      outline: none;
+      border-radius: 0 22px 0 22px;
+      text-align: center;
+      box-shadow: 2px 3px 7px #777272; }
+      .wrapper-form-reistration form input:focus {
+        box-shadow: inset 1px 0 10px #948794; }
+      .wrapper-form-reistration form input:-webkit-autofill {
+        -webkit-box-shadow: inset 0 0 0 50px white; }
+    .wrapper-form-reistration form .correct_input {
+      height: 23px;
+      width: 23px;
+      position: absolute;
+      display: inline;
+      margin-left: 12px;
+      font-weight: 900;
+      background-color: #87c474;
+      border: 1px solid #488b35;
+      border-radius: 50%;
+      display: none; }
+    .wrapper-form-reistration form #reset {
+      height: 14px;
+      margin: 7px auto 10px;
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      color: #3b3939;
+      display: block;
+      cursor: pointer;
+      letter-spacing: 1px; }
+      .wrapper-form-reistration form #reset:hover {
+        color: black;
+        letter-spacing: 2px; }
+    .wrapper-form-reistration form .password {
+      position: relative;
+      display: inline; }
+      .wrapper-form-reistration form .password #show_password {
+        display: inline;
+        position: absolute;
+        right: 17px;
+        top: 2px;
+        width: 15px;
+        height: 2px;
+        text-align: center;
+        font-size: 16px;
+        color: #4f4950;
+        border-radius: 50%;
+        cursor: pointer; }
+  .wrapper-form-reistration .error_validation {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana;
+    font-size: 13px;
+    margin-top: 3px;
+    color: #d4391e; }
+
+#send_data,
+#modal-button-for-close-message {
+  width: 260px;
+  height: 40px;
+  display: inline-block;
+  margin: 25px auto 0;
+  border: 7px outset #bb8de9;
+  border-radius: 0 22px 0 22px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.4s;
+  cursor: pointer; }
+  #send_data:hover,
+  #modal-button-for-close-message:hover {
+    background-color: #ddd8e2;
+    transform: translateY(-1px);
+    box-shadow: 2px 2px 4px #5c5a5a; }
+
+#modal-background-form-reistration {
+  position: fixed;
+  z-index: 50;
+  background: #050505;
+  opacity: 0.6;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: none; }
+
+#modal-message_form-reistration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 60;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  width: 560px;
+  height: 220px;
+  background-color: #7fc179;
+  border: 7px outset #b78ee0;
+  border-radius: 6px;
+  text-align: center;
+  display: none; }
+  #modal-message_form-reistration h3 {
+    font-size: 28px;
+    margin: 25px 0;
+    text-transform: uppercase; }
+  #modal-message_form-reistration #modal-button-for-close-message {
+    margin: 10px auto 0; }
+
+.block_prompt {
+  height: 23px;
+  width: 23px;
+  position: absolute;
+  display: inline;
+  margin-left: 12px;
+  font-size: 19px;
+  font-weight: 900;
+  background-color: rgba(117, 124, 115, 0.452);
+  border: 1px solid rgba(107, 53, 139, 0.562);
+  border-radius: 50%; }
+  .block_prompt .prompt_text {
+    width: 325px;
+    margin: 10px 0;
+    padding: 11px;
+    border: 1px solid rebeccapurple;
+    border-radius: 38px 38px 0 38px;
+    background-color: white;
+    z-index: 999;
+    position: absolute;
+    left: -3px;
+    top: 27px;
+    display: none; }
+    .block_prompt .prompt_text::before {
+      content: "";
+      width: 27px;
+      height: 19px;
+      border-left: 1px solid rebeccapurple;
+      border-top: 1px solid rebeccapurple;
+      background-color: #fff;
+      position: absolute;
+      top: -7px;
+      left: 16px;
+      transform: rotate(21deg); }
+  .block_prompt .prompt {
+    cursor: help; }
+    .block_prompt .prompt:hover + .prompt_text {
+      display: inline-block; }
+
+/*# sourceMappingURL=PracticeDOM.css.map */
