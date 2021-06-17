@@ -53,9 +53,8 @@ function checkInputForm(e) {
 
 
     //check Input First Name
-    const regexCheckValidityFirstName = /^[^!#%&*:<>?/{|}]+$/;
+    const regexCheckValidityName = /^[^-!#%&*:<>=`~?$@/+{|}]+$/;
 
-    // console.log(regexCheckValidityFirstName);
     if (inputFirstName.value.trim() === "") {
         inputFirstName.style.border = errorBorder;
         errorFirstName.textContent = 'Enter your first name';
@@ -63,11 +62,11 @@ function checkInputForm(e) {
 
     } else if (inputFirstName.value.trim().length < 3) {
         inputFirstName.style.border = errorBorder;
-        errorFirstName.textContent = 'нюхай бебру';
+        errorFirstName.textContent = 'The first name must be more than three characters';
         errorForm.thereIsFirstNameError = true;
-    } else if (inputFirstName.value.indexOf(regexCheckValidityFirstName) === 1) {
+    } else if (!regexCheckValidityName.test(inputFirstName.value)) {
         inputFirstName.style.border = errorBorder;
-        errorFirstName.textContent = 'TDDDDD';
+        errorFirstName.textContent = 'Name contains invalid characters';
         errorForm.thereIsFirstNameError = true;
     } else {
         inputFirstName.style.border = correctInputBorder;
@@ -86,6 +85,14 @@ function checkInputForm(e) {
         inputSecondName.style.border = errorBorder;
         errorSecondName.textContent = 'Enter your second name';
         errorForm.thereIsSecondNameError = true;
+    } else if (inputSecondName.value.trim().length < 3) {
+        inputSecondName.style.border = errorBorder;
+        errorSecondName.textContent = 'The second name must be more than three characters';
+        errorForm.thereIsSecondNameError = true;
+    } else if (!regexCheckValidityName.test(inputSecondName.value)) {
+        inputSecondName.style.border = errorBorder;
+        errorSecondName.textContent = 'Second name contains invalid characters';
+        errorForm.thereIsSecondNameError = true;
     } else {
         inputSecondName.style.border = correctInputBorder;
         errorSecondName.textContent = '';
@@ -101,13 +108,10 @@ function checkInputForm(e) {
     //check Input number
 
     // const regexCheckValidityNumber = /^[+][0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}$/;
-
     let maskNumberOptions = {
         mask: '+{380} (00) 000-00-00'
     };
     let maskNumber = IMask(inputNumber, maskNumberOptions);
-
-
 
     if (inputNumber.value.trim() === "") {
         inputNumber.style.border = errorBorder;
@@ -121,7 +125,7 @@ function checkInputForm(e) {
 
     } else if (inputNumber.value.trim().indexOf('+') === -1) {
         inputNumber.style.border = errorBorder;
-        errorNumber.textContent = 'The email must contain "+380" ';
+        errorNumber.textContent = 'The email must contain "+380"';
         errorForm.thereIsNumberError = true;
     } else {
         inputNumber.style.border = correctInputBorder;
@@ -169,7 +173,7 @@ function checkInputForm(e) {
 
     } else if (!regexCheckValidityPassword.test(inputPassword.value)) {
         inputPassword.style.border = errorBorder;
-        errorPassword.textContent = 'hui';
+        errorPassword.textContent = 'Password must contain at least one uppercase letter and number';
         errorForm.thereIsPasswordError = true;
 
     } else if (inputPassword.value.trim().length < 6) {
@@ -213,7 +217,6 @@ function checkInputForm(e) {
             blockPromptQuestionMark[0].style.display = 'inline';
             correctInputCheckMark[0].style.display = 'none';
         }
-
         if (errorForm.thereIsSecondNameError === true) {
             blockPromptQuestionMark[1].style.display = 'inline';
             correctInputCheckMark[1].style.display = 'none';
@@ -226,7 +229,6 @@ function checkInputForm(e) {
             blockPromptQuestionMark[3].style.display = 'inline';
             correctInputCheckMark[3].style.display = 'none';
         }
-
         if (errorForm.thereIsPasswordError === true) {
             blockPromptQuestionMark[4].style.display = 'inline';
             correctInputCheckMark[4].style.display = 'none';
@@ -288,6 +290,8 @@ function returnDefaultInput(selector, value, firstProperty, secondProperty) {
     })
 
 }
+
+
 
 
 
