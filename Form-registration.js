@@ -10,7 +10,6 @@ const correctInputCheckMark = document.querySelectorAll('.correct_input'); //("â
 const blockPromptQuestionMark = document.querySelectorAll('.block_prompt'); //("?")
 
 
-
 //errors
 const errorFirstName = document.querySelector('#errorFirstName');
 const errorSecondName = document.querySelector('#errorSecondName');
@@ -104,7 +103,6 @@ function checkInputForm(e) {
 
 
 
-
     //check Input number
 
     // const regexCheckValidityNumber = /^[+][0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}$/;
@@ -134,7 +132,6 @@ function checkInputForm(e) {
         correctInputCheckMark[2].style.display = 'inline';
         errorForm.thereIsNumberError = false;
     }
-
 
 
 
@@ -188,29 +185,6 @@ function checkInputForm(e) {
         errorForm.thereIsPasswordError = false;
     }
 
-    // if (errorForm.thereIsFirstNameError === true) {
-    //     blockPromptQuestionMark[0].style.display = 'inline';
-    //     correctInputCheckMark[0].style.display = 'none';
-    // }
-
-    // if (errorForm.thereIsSecondNameError === true) {
-    //     blockPromptQuestionMark[1].style.display = 'inline';
-    //     correctInputCheckMark[1].style.display = 'none';
-    // }
-    // if (errorForm.thereIsNumberError === true) {
-    //     blockPromptQuestionMark[2].style.display = 'inline';
-    //     correctInputCheckMark[2].style.display = 'none';
-    // }
-    // if (errorForm.thereIsEmailError === true) {
-    //     blockPromptQuestionMark[3].style.display = 'inline';
-    //     correctInputCheckMark[3].style.display = 'none';
-    // }
-
-    // if (errorForm.thereIsPasswordError === true) {
-    //     blockPromptQuestionMark[4].style.display = 'inline';
-    //     correctInputCheckMark[4].style.display = 'none';
-    // }
-
     checkCorrectInputMark();
     function checkCorrectInputMark() {
         if (errorForm.thereIsFirstNameError === true) {
@@ -234,8 +208,6 @@ function checkInputForm(e) {
             correctInputCheckMark[4].style.display = 'none';
         }
     }
-
-
 
     /*check the entire input registration form for errors and display the object data*/
     const modalBgFormReistration = document.querySelector('#modal-background-form-reistration');
@@ -288,7 +260,6 @@ function returnDefaultInput(selector, value, firstProperty, secondProperty) {
     getSelector.forEach(item => {
         secondProperty ? item[firstProperty][secondProperty] = value : item[firstProperty] = value;
     })
-
 }
 
 
